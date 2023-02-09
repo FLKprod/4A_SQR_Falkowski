@@ -1,4 +1,5 @@
-# Projet de Cloud Computing
+# Projet de Cloud Computing 2022 / 2023
+
 By [Falkowski Maxime](https://github.com/FLKprod) et [Blanchard Lucas](https://github.com/lucas-b700)  
 **Spécialité SQR**  
 
