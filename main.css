@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: darkblue;
+}
+
+#calculatrice {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#calculatrice > p{
+    text-align: center;
+    color : whitesmoke;
+}
+
+#calculatrice > input{
+    height: 4em;
+    width: 20em;
+    text-align: center;
+    background-color: whitesmoke;
+    color: black;
+}
+
+#valide{
+    background-color: greenyellow;
+    color: green;
+    font-weight: bold;
+    width: 20em;
+    height: 4em;
+}
