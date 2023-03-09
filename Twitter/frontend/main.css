@@ -4,10 +4,6 @@ body{
     overflow:auto;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: row;
     background-color: midnightblue;
     overflow-y: scroll;
     -webkit-animation-name: fadeInOpacity;
@@ -18,8 +14,11 @@ body{
 	        animation-timing-function: ease-in;
 	-webkit-animation-duration: 0.7s;
 	        animation-duration: 0.7s;
-
-
+}
+.website{
+    display: flex;
+    flex-direction: row;
+    justify-content: row;
 }
 
 #logo{
@@ -29,7 +28,8 @@ body{
 }
 
 .interface-tweets{
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
+    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,32 +40,25 @@ body{
 }
 
 .interface-user{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 1%;
-    width: 19%;
+    width: 20%;
     height: 40%;
     background-color: darkblue;
 }
 
-.tweet{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    background-color: lightblue;
-}
 .create-tweet{
     width: 100%;
     height: auto;
     background-color: mediumblue;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 .button-interface{
@@ -76,9 +69,10 @@ body{
     border-color: lightblue;
 }
 
-.input-interface{
-    width: 80%;
+.textarea-interface{
+    width: 100%;
     height: auto;
+    padding: 1em;
     margin-top: 1rem;
     margin-bottom: 1rem;
     background-color: lightskyblue;
@@ -97,10 +91,13 @@ body{
 }
 
 #tweet{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border: 2px solid lightgray;
     width: 99%;
     background-color: darkblue;
     border-radius: 10px;
-    border-color: darkblue;
     padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 1em;
@@ -118,6 +115,7 @@ body{
 
 .buttons > button{
     margin-left: 1rem;
+    border: none;
     background-color: midnightblue;
 }
 

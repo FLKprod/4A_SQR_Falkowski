@@ -18,7 +18,12 @@ function tweeter(){
 }
 
 function changeuser(){
-  localStorage.setItem("username",document.getElementById("connect-user").value)
-  alert("username modifié")
-  document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
+    if(document.getElementById("connect-user").value.length != 0){
+        localStorage.setItem("username",document.getElementById("connect-user").value)
+        alert("username modifié")
+        document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
+    }
+    else{
+        alert("veuillez saisir un utilisateur")
+    }
 }
