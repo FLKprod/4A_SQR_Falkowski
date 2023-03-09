@@ -1,0 +1,154 @@
+body{
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: midnightblue;
+
+    -webkit-animation-name: fadeInOpacity;
+	        animation-name: fadeInOpacity;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in;
+	        animation-timing-function: ease-in;
+	-webkit-animation-duration: 0.7s;
+	        animation-duration: 0.7s;
+
+
+}
+
+#logo{
+    padding-bottom: 1rem;
+    width: 3rem;
+}
+
+.interface-tweets{
+    padding: 0;
+    margin: 0;
+    width: 95%;
+    height: 80%;
+    background-color: darkblue;
+}
+
+
+
+.tweet{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.create-tweet{
+    background-color: mediumblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.create-tweet > button{
+    color: whitesmoke;
+    background-color: lightskyblue;
+    border-radius: 5px;
+    margin-left: 1em;
+    border-color: lightblue;
+}
+
+.create-tweet > input{
+    width: 80%;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: lightskyblue;
+    color: white;
+    border-radius: 5px;
+    border-color: midnightblue;
+}
+
+.tweets{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: mediumblue;
+}
+
+#tweet{
+    width: 99%;
+    background-color: darkblue;
+    border-radius: 10px;
+    border-color: darkblue;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+
+.buttons > button{
+    margin-left: 1rem;
+    background-color: midnightblue;
+}
+
+.buttons > button:hover{
+    margin-left: 1rem;
+    background-color: blue;
+}
+
+.buttons > button:active{
+    margin-left: 1rem;
+    background-color: whitesmoke;
+}
+
+#auteur{
+    margin-left: 1rem;
+    color: lightgray;
+}
+
+#photo-auteur{
+    margin-left: 1em;
+    width: 2rem;
+}
+
+#corps{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    color: whitesmoke;
+    display: inline-block;
+    word-break: break-word;
+}
+
+.user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+
+@-webkit-keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
