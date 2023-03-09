@@ -1,3 +1,5 @@
+document.getElementById("user-connected").innerText =localStorage.getItem("username")
+
 function tweeter(){
     var corps = document.getElementById("corps").value;
     var profil = localStorage.getItem("username")
@@ -6,7 +8,7 @@ function tweeter(){
     fetch('http://localhost:5000/tweeter/'+profil+'/'+corps,
     {
         method: "POST", 
-        mode: 'cors',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json',
         }
@@ -16,7 +18,7 @@ function tweeter(){
 }
 
 function changeuser(){
-  localStorage.setItem("username",document.getElementById("connect"))
+  localStorage.setItem("username",document.getElementById("connect-user").value)
   alert("username modifié")
-  document.getElementById("user-connected").innerText(localStorage.getItem("username"))
+  document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
 }

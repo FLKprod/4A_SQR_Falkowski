@@ -7,9 +7,9 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: row;
     background-color: midnightblue;
-
+    overflow-y: scroll;
     -webkit-animation-name: fadeInOpacity;
 	        animation-name: fadeInOpacity;
 	-webkit-animation-iteration-count: 1;
@@ -24,6 +24,8 @@ body{
 
 #logo{
     width: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .interface-tweets{
@@ -48,8 +50,6 @@ body{
     background-color: darkblue;
 }
 
-
-
 .tweet{
     display: flex;
     flex-direction: column;
@@ -59,10 +59,9 @@ body{
     text-align: center;
     background-color: lightblue;
 }
-
 .create-tweet{
-    width: 75%;
-    height: 80%;
+    width: 100%;
+    height: auto;
     background-color: mediumblue;
     display: flex;
     flex-direction: row;
