@@ -9,6 +9,7 @@ class Tweet:
         self.corps = corps
 @app.route('/tweeter/<profil>/<corps>', methods=['POST'])
 def tweeter(profil,corps):
+    
     return Tweet(profil,corps)
 
 if __name__ == '__main__':
