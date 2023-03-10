@@ -11,7 +11,7 @@
         <div class="interface-tweets">
             <img id="logo" src="logo-Twitter.png">
             <div class="create-tweet">
-                <textarea id="corps" class="textarea-interface"  placeholder="What's happening?" ></textarea>
+                <textarea id="corps" class="textarea-interface" style="min-width: max-content;" placeholder="What's happening?" ></textarea>
                 <button id="tweeter" class="button-interface" style="margin-right: 1em;" onclick="tweeter();">Tweeter</button>
             </div>
             <div class="tweets">
@@ -76,7 +76,7 @@
             <div class="infos-user">
                 <p style="color:whitesmoke">Me Connecter</p>
                 <img id="photo-auteur" src="user-photo.png">
-                <textarea id="connect-user" class="textarea-interface" placeholder="Username" ></textarea>
+                <input id="connect-user" class="textarea-interface" style="max-width: max-content;"placeholder="Username" >
                 <button id="connect" class="button-interface" onclick="changeuser();">Me connecter</button>
                 <p id="user-connected" style="color:whitesmoke">user connecté</p>
             </div>
