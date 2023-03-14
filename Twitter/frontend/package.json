@@ -1,0 +1,25 @@
+{
+  "name": "twitter",
+  "version": "1.0.0",
+  "description": "Voici notre application Twitter",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FLKprod/4A_SQR_Falkowski_Blanchard.git"
+  },
+  "keywords": [
+    "\"frontend\"",
+    "\"twitter\"",
+    "\"vue\""
+  ],
+  "author": "Lucas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FLKprod/4A_SQR_Falkowski_Blanchard/issues"
+  },
+  "homepage": "https://github.com/FLKprod/4A_SQR_Falkowski_Blanchard#readme"
+}
