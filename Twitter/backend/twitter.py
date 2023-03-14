@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
@@ -8,8 +8,8 @@ class Tweet:
         self.profil = profil
         self.corps = corps
 @app.route('/tweeter/<profil>/<corps>', methods=['POST'])
-def tweeter():
-    tweet=str(request.from.get("json"))
+def tweeter(profil,corps):
+    tweet=str(request.form.get("json"))
     
     return Tweet(profil,corps)
 
