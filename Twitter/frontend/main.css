@@ -22,7 +22,7 @@ body{
 }
 
 #logo{
-    width: 3rem;
+    width: 5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -36,12 +36,12 @@ body{
     justify-content: center;
     width: 75%;
     height: 80%;
-    background-color: darkblue;
+    
 }
 
 .interface-user{
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    margin-top: 7rem;
+    padding-bottom: 7rem;
     display: flex;
     text-align: center;
     flex-direction: column;
@@ -55,7 +55,7 @@ body{
 .create-tweet{
     width: 100%;
     height: auto;
-    background-color: mediumblue;
+    background-color: darkblue;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -87,7 +87,7 @@ body{
     align-items: center;
     width: 100%;
     height: auto;
-    background-color: mediumblue;
+    background-color: darkblue;
 }
 
 #tweet{
@@ -95,10 +95,11 @@ body{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     border: 2px solid lightgray;
-    background-color: darkblue;
+    background-color: mediumblue;
     border-radius: 10px;
     padding-top: 1em;
-    max-width: max-content;
+    width: 100%;
+    height: auto;
     padding-bottom: 1em;
     margin-bottom: 1em;
     margin-left: 1em;

@@ -8,7 +8,8 @@ class Tweet:
         self.profil = profil
         self.corps = corps
 @app.route('/tweeter/<profil>/<corps>', methods=['POST'])
-def tweeter(profil,corps):
+def tweeter():
+    tweet=str(request.from.get("json"))
     
     return Tweet(profil,corps)
 

@@ -1,4 +1,4 @@
-document.getElementById("user-connected").innerText =localStorage.getItem("username")
+document.getElementById("user-connected").innerText =localStorage.getItem("username")+" est actuellement connécté"
 
 function tweeter(){
     if(document.getElementById("corps").value.length != 0){
