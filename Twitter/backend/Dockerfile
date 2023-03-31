@@ -7,7 +7,7 @@ COPY . .
 
 ENV FLASK_APP=twitter.py
 ENV FLASK_DEBUG=True
-ENV FLASK_ENV = development
+ENV FLASK_ENV=development
 EXPOSE 5000
 
 CMD ["flask", "run"]
