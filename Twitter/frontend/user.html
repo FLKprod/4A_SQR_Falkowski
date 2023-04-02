@@ -4,17 +4,21 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="shortcut icon" href="logo-Twitter.png">
-		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="user.css" />
 	</head>
     <body>
         <div class="website">
-        <div class="interface-tweets">
-            <img id="logo" src="logo-Twitter.png">
-            <div class="create-tweet">
-                <textarea id="corps" class="textarea-interface" style="min-width: max-content;" placeholder="What's happening?" ></textarea>
-                <button id="tweeter" class="button-interface" style="margin-right: 1em;" onclick="tweeter();">Tweeter</button>
+            <div class="interface-user">
+                <img id="logo" src="logo-Twitter.png">
+                <div class="infos-user">
+                    <img id="photo-auteur" style="width: 5rem;" src="user-photo.png">
+                    <p id="user-connected" style="color:whitesmoke">user connecté</p>
+                    <button id="connect" class="button-interface" onclick="window.location.href='index.html';">Retour menu</button>
+                </div>
             </div>
-            <div id="tweets">
+        <div class="interface-tweets">
+            <p class="action"> a tweeté </p>
+            <div class="tweets">
                 <div id="tweet">
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
@@ -26,6 +30,7 @@
                         <button id="retweet" onclick="">🔁</button>
                     </div>
                 </div>
+                <p class="action"> a tweeté </p>
                 <div id="tweet">
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
@@ -37,6 +42,7 @@
                         <button id="retweet" onclick="">🔁</button>
                     </div>
                 </div>
+                <p class="action"> a tweeté </p>
                 <div id="tweet">
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
@@ -48,6 +54,7 @@
                         <button id="retweet" onclick="">🔁</button>
                     </div>
                 </div>
+                <p class="action"> a tweeté </p>
                 <div id="tweet">
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
@@ -59,6 +66,7 @@
                         <button id="retweet" onclick="">🔁</button>
                     </div>
                 </div>
+                <p class="action"> a tweeté </p>
                 <div id="tweet">
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
@@ -72,17 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="interface-user">
-            <div class="infos-user">
-                <p style="color:whitesmoke">Me Connecter</p>
-                <img id="photo-auteur" src="user-photo.png">
-                <input id="connect-user" class="textarea-interface" style="max-width: max-content;"placeholder="Username" >
-                <button id="connect" class="button-interface" onclick="changeuser();">Me connecter</button>
-                <p id="user-connected" style="color:whitesmoke">user connecté</p>
-                <button id="connect" class="button-interface" onclick="window.location.href='user.html';">Voir mon profil</button>
-            </div>
-        </div>
-        <script src="main.js"></script>
+        <script src="user.js"></script>
         </div>
     </body>
 </html>

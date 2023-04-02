@@ -28,39 +28,31 @@ body{
 }
 
 .interface-tweets{
+    margin-top: 7rem;
     margin-bottom: 5rem;
-    margin-left: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 75%;
     height: 80%;
-    
+    background-color: darkblue;
 }
 
 .interface-user{
     margin-top: 7rem;
     padding-bottom: 7rem;
+    margin-left:2rem; 
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 20%;
-    height: 40%;
+    width: 30%;
+    height: 50%;
     background-color: darkblue;
 }
 
-.create-tweet{
-    width: 100%;
-    height: auto;
-    background-color: darkblue;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
 .button-interface{
     color: whitesmoke;
     background-color: lightskyblue;
@@ -69,16 +61,10 @@ body{
     border-color: lightblue;
 }
 
-.textarea-interface{
+.action{
     width: 100%;
-    height: min-content;
-    padding: 1em;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: lightskyblue;
-    color: white;
-    border-radius: 5px;
-    border-color: midnightblue;
+    color:whitesmoke;
+    margin-left: 1rem;
 }
 
 #tweets{
@@ -156,6 +142,15 @@ body{
     align-items: center;
     width: 100%;
     height: auto;
+}
+
+.infos-user{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    
 }
 
 @keyframes fadeInOpacity {
