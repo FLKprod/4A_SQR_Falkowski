@@ -67,3 +67,15 @@ function changeuser(){
         alert("veuillez saisir un utilisateur")
     }
 }
+
+
+function gouser() {
+    let elements = document.getElementsByTagName("body");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.add("fade-out");
+    }
+    setTimeout(function() {
+        window.location.href='user.html';
+    }, 700);
+    
+  }

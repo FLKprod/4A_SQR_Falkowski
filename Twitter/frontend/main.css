@@ -6,8 +6,8 @@ body{
     padding: 0;
     background-color: midnightblue;
     overflow-y: scroll;
-    -webkit-animation-name: fadeInOpacity;
-	        animation-name: fadeInOpacity;
+    -webkit-animation-name: apparition;
+	        animation-name: apparition;
 	-webkit-animation-iteration-count: 1;
 	        animation-iteration-count: 1;
 	-webkit-animation-timing-function: ease-in;
@@ -43,10 +43,10 @@ body{
     margin-top: 7rem;
     padding-bottom: 7rem;
     display: flex;
-    text-align: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 20%;
     height: 40%;
     background-color: darkblue;
@@ -157,8 +157,25 @@ body{
     width: 100%;
     height: auto;
 }
+.infos-user > p{
+    color:whitesmoke;
+}
 
-@keyframes fadeInOpacity {
+.infos-user > button:active{
+    background-color:white;
+    -webkit-animation-name: disparition;
+	        animation-name: disparition;
+	-webkit-animation-iteration-count: 1;
+	        animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in;
+	        animation-timing-function: ease-in;
+	-webkit-animation-duration: 0.7s;
+	        animation-duration: 0.7s;
+}
+
+
+
+@keyframes apparition {
 	0% {
 		opacity: 0;
 	}
@@ -167,7 +184,7 @@ body{
 	}
 }
 
-@-webkit-keyframes fadeInOpacity {
+@-webkit-keyframes apparition {
 	0% {
 		opacity: 0;
 	}
@@ -175,3 +192,8 @@ body{
 		opacity: 1;
 	}
 }
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.7s;
+  }
