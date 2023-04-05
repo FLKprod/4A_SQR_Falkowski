@@ -1,12 +1,14 @@
 document.getElementById("user-connected").innerText =localStorage.getItem("username")+" est actuellement connécté"
+document.getElementById("theme-selected").innerText = "thème : " + localStorage.getItem("theme")
 
 function tweeter(){
    
     if(document.getElementById("corps").value.length != 0){
         var corps = document.getElementById("corps").value;
         var profil = localStorage.getItem("username");
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST","http://127.0.0.1:5000/tweeter/"+profil+"/"+corps);
+        var sujet = localStorage.getItem("theme");
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST","http://127.0.0.1:5000/tweeter/"+profil+"/"+corps+"/"+sujet);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.onload = () => {
@@ -30,6 +32,11 @@ function tweeter(){
                 newusername.innerText = profil;
                 newuser.appendChild(newusername)
 
+                var newtweettheme = document.createElement("p");
+                newtweettheme.setAttribute("id", "sujet")
+                newtweettheme.innerText = "#"+sujet;
+                newuser.appendChild(newtweettheme)
+
                 var newtweetcorps = document.createElement("p");
                 newtweetcorps.setAttribute("id", "corps")
                 newtweetcorps.innerText = corps;
@@ -48,12 +55,14 @@ function tweeter(){
                 retweetbutton.setAttribute("id", "retweet")
                 retweetbutton.innerText = "🔁";
                 buttons.appendChild(retweetbutton)
+
+                console.log(xhr.responseText)
             }
             else {
                 console.log(`Error: ${xhr.status}`);
             }
         };
-        xhr.send("ok");
+        xhr.send();
     }  
 }
 
@@ -68,6 +77,18 @@ function changeuser(){
     }
 }
 
+function changetheme(){
+    if(document.getElementById("select-theme").value.length != 0){
+        localStorage.setItem("theme",document.getElementById("select-theme").value)
+        document.getElementById("theme-selected").innerText = "thème : " + localStorage.getItem("theme")
+    }
+    else{
+        localStorage.setItem("theme","Globale")
+        document.getElementById("theme-selected").innerText = "thème : Globale"
+    }
+}
+
+
 
 function gouser() {
     let elements = document.getElementsByTagName("body");
@@ -78,4 +99,57 @@ function gouser() {
         window.location.href='user.html';
     }, 700);
     
+  }
+
+  function alltweets(){
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET","http://127.0.0.1:5000/tweeter");
+    xhr.onload = () => {
+        if (xhr.status == 200) {
+           for(let i=0;i<xhr.response.length;i++){
+            var newtweet = document.createElement("div");
+            newtweet.setAttribute("id", "tweet")
+            document.getElementById("tweets").appendChild(newtweet)
+
+            var newuser = document.createElement("div");
+            newuser.setAttribute("id", "user")
+            newtweet.appendChild(newuser)
+
+            var newuserphoto =  document.createElement("img");
+            newuserphoto.setAttribute("id", "photo-auteur")
+            newuserphoto.src = "user-photo.png";
+            newuser.appendChild(newuserphoto)
+
+            var newusername = document.createElement("p");
+            newusername.setAttribute("id", "auteur")
+            newusername.innerText = "profil";                   // Pouvoir recuperer via redis le profil ayant tweeté
+            newuser.appendChild(newusername)
+
+            var newtweetcorps = document.createElement("p");
+            newtweetcorps.setAttribute("id", "corps")
+            newtweetcorps.innerText = "corps";                  // Pouvoir recuperer via redis le corps du tweet
+            newtweet.appendChild(newtweetcorps)
+
+            var buttons = document.createElement("div");
+            buttons.setAttribute("class", "buttons")
+            newtweet.appendChild(buttons)
+
+            var likebutton = document.createElement("button");
+            likebutton.setAttribute("id", "like")
+            likebutton.innerText = "❤️";
+            buttons.appendChild(likebutton)
+
+            var retweetbutton = document.createElement("button");
+            retweetbutton.setAttribute("id", "retweet")
+            retweetbutton.innerText = "🔁";
+            buttons.appendChild(retweetbutton)
+
+            console.log(xhr.responseText)
+        }
+    }
+    else {
+        console.log(`Error: ${xhr.status}`);
+    }
+    };
+    xhr.send();
   }

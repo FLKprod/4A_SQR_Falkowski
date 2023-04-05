@@ -1,18 +1,20 @@
-document.getElementById("user-connected").innerText =localStorage.getItem("username");
 profil = localStorage.getItem("username");
-const xhr = new XMLHttpRequest();
+document.getElementById("user-connected").innerText =profil;
+
+
+
+function tweets(){
+var xhr = new XMLHttpRequest();
 xhr.open("GET","http://127.0.0.1:5000/tweeter/"+ profil);
-xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-xhr.onload = () => {
-    if (xhr.status == 200) {
-      console.log("chargement tweets")
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      /*console.log("200 !!!")
       var newtweet = document.createElement("div");
       newtweet.setAttribute("id", "tweet")
       document.getElementById("tweets").appendChild(newtweet)
 
       var newuser = document.createElement("div");
-      newuser.setAttribute("id", "user")
+      newuser.setAttribute("id", "user");
       newtweet.appendChild(newuser)
 
       var newuserphoto =  document.createElement("img");
@@ -22,20 +24,26 @@ xhr.onload = () => {
 
       var newusername = document.createElement("p");
       newusername.setAttribute("id", "auteur")
-      newusername.innerText = profil;
+      newusername.innerText = "zzz";
       newuser.appendChild(newusername)
+
+      var newtweettheme = document.createElement("p");
+      newtweettheme.setAttribute("id", "sujet")
+      newtweettheme.innerText = "#"+"sujet";
+      newuser.appendChild(newtweettheme)
 
       var newtweetcorps = document.createElement("p");
       newtweetcorps.setAttribute("id", "corps")
-      newtweetcorps.innerText = xhr.responseText;
-      newtweet.appendChild(newtweetcorps)
-
-   }
+      newtweetcorps.innerText = "deded";
+      newtweet.appendChild(newtweetcorps)*/
+      console.log(xhr.responseText)
+  }
   else {
     console.log(`Error: ${xhr.status}`);
   }
 };
-
+xhr.send();
+}
 
 const bodyElements = document.querySelectorAll('body *');
     for (let i = 0; i < bodyElements.length; i++) {

@@ -19,7 +19,9 @@
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
                         <p id="auteur">Falko</p>
+                        <p id="sujet">#whallahgénialleprojet</p>
                     </div>
+                    
                     <p id="corps">Mashalla le projet</p>
                     <div class="buttons">
                         <button id="like" onclick="">❤️</button>
@@ -30,6 +32,7 @@
                     <div id="user">
                         <img id="photo-auteur" src="user-photo.png">
                         <p id="auteur">Falko</p>
+                        <p id="sujet">#Asterix</p>
                     </div>
                     <p id="corps">Moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi.</p>
                     <div class="buttons">
@@ -47,6 +50,10 @@
                 <button id="connect" class="button-interface" onclick="changeuser();">Me connecter</button>
                 <p id="user-connected" style="color:whitesmoke">user connecté</p>
                 <button id="connect" class="button-interface" onclick="gouser();">Voir mon profil</button>
+                <p style="margin-top: 5rem;">Choisir le theme</p>
+                <input id="select-theme" class="textarea-interface" style="max-width: max-content;"placeholder="Theme" >
+                <button id="connect" class="button-interface" onclick="changetheme();">Séléctionner le thème</button>
+                <p id="theme-selected" style="color:whitesmoke"></p>
             </div>
         </div>
         <script src="main.js"></script>
