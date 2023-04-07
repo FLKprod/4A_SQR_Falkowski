@@ -1,12 +1,11 @@
 document.getElementById("user-connected").innerText =localStorage.getItem("username")+" est actuellement connécté"
-document.getElementById("theme-selected").innerText = "thème : " + localStorage.getItem("theme")
-
+document.getElementById("sujet-selected").value =localStorage.getItem("sujet");
 function tweeter(){
    
     if(document.getElementById("corps").value.length != 0){
         var corps = document.getElementById("corps").value;
         var profil = localStorage.getItem("username");
-        var sujet = localStorage.getItem("theme");
+        var sujet = localStorage.getItem("sujet");
         var xhr = new XMLHttpRequest();
         xhr.open("POST","http://127.0.0.1:5000/tweeter/"+profil+"/"+corps+"/"+sujet);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -67,26 +66,25 @@ function tweeter(){
 }
 
 function changeuser(){
-    if(document.getElementById("connect-user").value.length != 0){
-        localStorage.setItem("username",document.getElementById("connect-user").value)
-        alert("username modifié")
-        document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
-    }
-    else{
-        alert("veuillez saisir un utilisateur")
-    }
+        if(document.getElementById("connect-user").value.length != 0){
+            localStorage.setItem("username",document.getElementById("connect-user").value)
+            alert("username modifié")
+            document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
+        }
+        else{
+            alert("veuillez saisir un utilisateur")
+        }
 }
 
 function changetheme(){
-    if(document.getElementById("select-theme").value.length != 0){
-        localStorage.setItem("theme",document.getElementById("select-theme").value)
-        document.getElementById("theme-selected").innerText = "thème : " + localStorage.getItem("theme")
-    }
-    else{
-        localStorage.setItem("theme","Globale")
-        document.getElementById("theme-selected").innerText = "thème : Globale"
-    }
+    localStorage.setItem("sujet",document.getElementById("select-theme").value)
 }
+
+function selecttheme(){
+    localStorage.setItem("sujet",document.getElementById("sujet-selected").value)
+}
+sujet_selected=document.getElementById("sujet-selected")
+sujet_selected.addEventListener('change', selecttheme);
 
 
 

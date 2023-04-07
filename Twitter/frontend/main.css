@@ -157,6 +157,16 @@ body{
     margin-right: 2rem;
  }
 
+ #sujet-selected{
+    text-align: center;
+    height: 2rem;
+    width: 70%;
+    background-color: lightblue;
+    border-radius: 0;
+    color:whitesmoke;
+    cursor: pointer;
+ }
+
 #user{
     display: flex;
     flex-direction: row;

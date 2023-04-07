@@ -1,8 +1,6 @@
 profil = localStorage.getItem("username");
 document.getElementById("user-connected").innerText =profil;
 
-
-
 function tweets(){
 var xhr = new XMLHttpRequest();
 xhr.open("GET","http://127.0.0.1:5000/tweeter/"+ profil);
