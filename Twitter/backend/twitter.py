@@ -1,6 +1,11 @@
-from flask import Flask, request, jsonify
+# export FLASK_APP=backend/twitter.py
+# python -m flask run
+# docker run -p 6379:6379 redis
+
+from flask import Flask, request
 from flask_cors import CORS
 import json
+import sys
 
 app = Flask(__name__)
 CORS(app)
@@ -23,7 +28,9 @@ class Tweet:
 @app.route('/tweeter/<profil>/<corps>/<sujet>', methods=['POST'])
 def tweeter(profil,corps,sujet):
     r.set('tweets', json.dumps(Tweet(profil,corps,sujet).__json__()))
-
+    print(r.get('tweets'))
+    print("deded")
+    sys.stdout.flush()
     return Tweet(profil,corps,sujet).__json__()
 
 
@@ -42,11 +49,9 @@ def get_all_tweets(profil):
 def get_tweets(profil):
     all_tweets = []
     for i in r.get('tweets').__len__:
-            all_tweets.__add__(r.get('tweets')[i])
+        all_tweets.__add__(r.get('tweets')[i])
     return json.dumps(all_tweets)
 
 if __name__ == '__main__':
     app.run()
 
-# export FLASK_APP=backend/twitter.py
-# python -m flask run
