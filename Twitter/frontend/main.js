@@ -3,11 +3,13 @@ document.getElementById("sujet-selected").value =localStorage.getItem("sujet");
 function tweeter(){
    
     if(document.getElementById("corps").value.length != 0){
+        var id = Date.now();
+        console.log("id:", id);
         var corps = document.getElementById("corps").value;
         var profil = localStorage.getItem("username");
         var sujet = localStorage.getItem("sujet");
         var xhr = new XMLHttpRequest();
-        xhr.open("POST","http://127.0.0.1:5000/tweeter/"+profil+"/"+corps+"/"+sujet);
+        xhr.open("POST","http://127.0.0.1:5000/tweeter/"+profil+"/"+corps+"/"+sujet+"/"+id);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         xhr.onload = () => {
@@ -66,14 +68,14 @@ function tweeter(){
 }
 
 function changeuser(){
-        if(document.getElementById("connect-user").value.length != 0){
-            localStorage.setItem("username",document.getElementById("connect-user").value)
-            alert("username modifié")
-            document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
-        }
-        else{
-            alert("veuillez saisir un utilisateur")
-        }
+    if(document.getElementById("connect-user").value.length != 0){
+        localStorage.setItem("username",document.getElementById("connect-user").value)
+        alert("username modifié")
+        document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté"
+    }
+    else{
+        alert("veuillez saisir un utilisateur")
+    }
 }
 
 function changetheme(){

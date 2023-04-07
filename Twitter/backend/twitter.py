@@ -14,24 +14,23 @@ import redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
 class Tweet:
-    def __init__(self,profil,corps,sujet):
+    def __init__(self,profil,corps,sujet,id):
         self.profil = profil
         self.corps = corps
         self.sujet = sujet
+        self.id = id
         
     def __json__(self):
-        return {"profil": self.profil, "corps": self.corps, "sujet" : self.sujet}
-
-
+        return {"profil": self.profil, "corps": self.corps, "sujet" : self.sujet, "id": self.id}
 
 # route pour tweeter
-@app.route('/tweeter/<profil>/<corps>/<sujet>', methods=['POST'])
-def tweeter(profil,corps,sujet):
-    r.set('tweets', json.dumps(Tweet(profil,corps,sujet).__json__()))
-    print(r.get('tweets'))
+@app.route('/tweeter/<profil>/<corps>/<sujet>/<int:id>', methods=['POST'])
+def tweeter(profil,corps,sujet,id):
+    r.set(id, json.dumps(Tweet(profil,corps,sujet,id).__json__()))
+    print(r.get(id))
     print("deded")
     sys.stdout.flush()
-    return Tweet(profil,corps,sujet).__json__()
+    return Tweet(profil,corps,sujet,id).__json__()
 
 
 # route pour recuperer les tweets
