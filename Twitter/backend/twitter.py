@@ -13,6 +13,15 @@ CORS(app)
 import redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
+class User:
+    def __init__(self,profil,id):
+        self.profil = profil
+        self.id = id
+
+    def __json__(self):
+        return {"profil": self.profil, "id": self.id}
+
+
 class Tweet:
     def __init__(self,profil,corps,sujet,id):
         self.profil = profil
@@ -31,6 +40,30 @@ def tweeter(profil,corps,sujet,id):
     print("deded")
     sys.stdout.flush()
     return Tweet(profil,corps,sujet,id).__json__()
+
+# route pour ajouter un utilisateur
+@app.route('/user/<profil>/<int:id>', methods=['POST'])
+def changeuser(profil,id):
+    user_id = r.get("user_id")
+    user_unique = -1
+    for i in range(int(r.get("user_id"))):
+        print(r.get(i+1))
+        json_string = r.get(i+1)
+        json_data = json.loads(json_string)
+        prof = json_data["profil"]
+        print(prof)
+        if profil == prof:
+            user_unique = i+1
+    if user_unique == -1:
+        id = int(user_id) + 1
+        r.set("user_id", id)
+        r.set(id, json.dumps(User(profil,id).__json__()))
+    else:
+        id = user_unique
+    print(r.get(id))
+    print("deded")
+    sys.stdout.flush()
+    return User(profil,id).__json__()
 
 
 # route pour recuperer les tweets
