@@ -44,6 +44,7 @@ def tweeter(profil,corps,sujet,id):
 # route pour ajouter un utilisateur
 @app.route('/user/<profil>/<int:id>', methods=['POST'])
 def changeuser(profil,id):
+    r.setnx("user_id", 0)
     user_id = r.get("user_id")
     user_unique = -1
     for i in range(int(r.get("user_id"))):
