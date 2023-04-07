@@ -12,7 +12,7 @@ Nous avons fais un frontend pour le code de l'interface utilisateur, ce frontend
 Vous pouvez lancer notre application Twitter à l'aide du Dockerfile utilisant node.  
 Le Dockerfile est accompagné d'un fichier package.json contenant les informations nécessaire notamment afin d'aller récupérer le repository directement sur GitHub.  
   
-Ce frontend comporte de nombreuses fonctionnalités tel que :  
+**Ce frontend comporte de nombreuses fonctionnalités tel que :**  
 * Lire les tweets existant
 * Se connecter 
 * Ecrire et publier un tweet
@@ -31,6 +31,9 @@ Vous y trouverez :
 La phrase indiquant l'état de la connection indique aussi, dans le cas ou quelqu'un est connecté, le nom d'utilisateur de la personne connectée.
 
 ## Ecrire et publier un tweet
-
+Vous pouvez si vous le désirez écrire et publier un tweet, pour cela il vous faudra tout d'abord vous connecter via la zone dédié qui vous a été présenter précédemment.  
+Une fois connecté vous pourrez alors écrire dans la zone de texte située en haut de l'écran puis appuyer sur le bouton **Tweeter** et votre tweet sera publié.
 ## Aimé un tweet
+Un simple bouton permet d'aimé un tweet.
 ## retweeter un tweet
+Un simple bouton permet de retweeter un tweet.
