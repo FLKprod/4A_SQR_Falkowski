@@ -16,4 +16,9 @@ Afin de lancer notre application Twitter vous devez executer trois étapes :
 * Enfin, la Dockerfile du backend ne fonctionnant pas vous devrez, via wsl, vous rendre dans le dossier correspondant puis exécuter la commande `export FLASK_APP=twitter/backend/twitter.py` puis la commande `python3 -m flask run` afin de lancer le backend
   
   
+Une étape supplémentaire est possible bien qu'elle ne soit pas indispensable au fonctionnement correct de notre application :  
+* Vous pouvez exécuter, si vous souhaitez générer quelques utilisateurs ainsi que quelques tweets sur redis, la commande `python3 generate_data_script.py` via wsl.
+Cela générera 15 utilisateurs ainsi que 45 tweets.
+  
+  
 Vous pouvez désormais utiliser notre application Twitter.
