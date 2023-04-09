@@ -4,6 +4,7 @@ By [Falkowski Maxime](https://github.com/FLKprod) et [Blanchard Lucas](https://g
 **Spécialité SQR**  
 
 ![esirem](https://www.u-bourgogne.fr/wp-content/uploads/logo-couleur.jpg)
+![push_action](https://github.com/FLKprod/4A_SQR_Falkowski_Blanchard/actions/workflows/push.yml/badge.svg)  
 ![](https://img.shields.io/badge/PROJET_TERMINÉ_🚀-059142?style=for-the-badge&logoColor=white)
 
 
