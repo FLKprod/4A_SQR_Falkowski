@@ -7,10 +7,10 @@ xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 xhr.onload = () => {
 if (xhr.status === 200) {
   var tweets = JSON.parse(xhr.response)
-  for(i=tweets.length-1;i>0;i--){
+  for(i=tweets.length-1;i>=0;i--){
     if(tweets[i].profil==localStorage.getItem("username")){
 
-      var action  =document.createElement("p");
+      var action =document.createElement("p");
       action.setAttribute("id", "action")
       action.setAttribute("class", "action")
       action.innerText =localStorage.getItem("username") + " a tweeté";
