@@ -18,7 +18,6 @@ Le Dockerfile est accompagné d'un fichier package.json contenant les informatio
 * Choisir un hashtag
 * Ecrire et publier un tweet
 * Afficher l'ensemble de vos tweets
-* Aimé un tweet
 * retweeter un tweet
   
 ## Lire les tweets existant
@@ -43,7 +42,5 @@ Une fois connecté vous pourrez alors écrire dans la zone de texte située en h
 ## Afficher l'ensemble de vos tweets
 Dans la zone de connection vous pouvez apercevoir un bouton **Voir mon profil**, si vous appuyez dessus vous serez redirigé vers votre profil où vous pourrez lire l'ensemble des tweets que vous avez vous même écrit.
 
-## Aimé un tweet
-Un simple bouton permet d'aimé un tweet.
 ## retweeter un tweet
 Un simple bouton permet de retweeter un tweet.
