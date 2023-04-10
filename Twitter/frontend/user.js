@@ -7,10 +7,18 @@ xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 xhr.onload = () => {
 if (xhr.status === 200) {
   var tweets = JSON.parse(xhr.response)
-  for(i=0;i<tweets.length;i++){
+  for(i=tweets.length;i>0;i--){
     if(tweets[i].profil==localStorage.getItem("username")){
+
+      var action  =document.createElement("p");
+      action.setAttribute("id", "action")
+      action.setAttribute("class", "action")
+      action.innerText =localStorage.getItem("username") + " a tweeté";
+      document.getElementById("tweets").appendChild(action)
+
       var newtweet = document.createElement("div");
       newtweet.setAttribute("id", "tweet")
+      newtweet.setAttribute("class", "tweet")
       document.getElementById("tweets").appendChild(newtweet)
 
       var newuser = document.createElement("div");
@@ -38,18 +46,22 @@ if (xhr.status === 200) {
       newtweet.appendChild(newtweetcorps)
     }
   }
+  let bodyElements = document.getElementsByClassName("tweet");
+  console.log(bodyElements.length)
+    for (let i = 0; i < bodyElements.length; i++) {
+      if(bodyElements[i].id == 'action'){
+        var newtweetcorps = document.createElement("p");
+        newtweetcorps.setAttribute("id", "corps")
+        bodyElements[i].innerText =localStorage.getItem("username") + " a tweeté";
+      }
+    }
 }
 else {
   console.log(`Error: ${xhr.status}`);
 }};
 xhr.send();
 
-const bodyElements = document.querySelectorAll('body *');
-    for (let i = 0; i < bodyElements.length; i++) {
-      if(bodyElements[i].id == 'action'){
-        bodyElements[i].innerText =localStorage.getItem("username") + " a tweeté";
-      }
-    }
+
 
 function goprincipal() {
     let elements = document.getElementsByTagName("body");

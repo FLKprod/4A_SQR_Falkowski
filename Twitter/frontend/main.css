@@ -72,6 +72,8 @@ body{
 .textarea-interface{
     width: 100%;
     height: min-content;
+    align-items: center;
+    display: flex;
     padding: 1em;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -140,6 +142,7 @@ body{
 #photo-auteur{
     margin-left: 1em;
     width: 2rem;
+    align-items: center;
 }
 
 #corps{
