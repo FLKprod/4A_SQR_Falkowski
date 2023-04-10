@@ -1,6 +1,8 @@
 var profil = localStorage.getItem("username");
 document.getElementById("user-connected").innerText =profil;
 var xhr = new XMLHttpRequest();
+
+// on récupère les tweets ayant pour auteur l'utilisateur connécté
 xhr.open("POST","http://127.0.0.1:5000/"+profil);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
@@ -46,10 +48,11 @@ if (xhr.status === 200) {
       newtweet.appendChild(newtweetcorps)
     }
   }
+  // on ajoute les elements pour décrire les acctions
   let bodyElements = document.getElementsByClassName("tweet");
-  console.log(bodyElements.length)
     for (let i = 0; i < bodyElements.length; i++) {
       if(bodyElements[i].id == 'action'){
+        // on créé un élément <p>
         var newtweetcorps = document.createElement("p");
         newtweetcorps.setAttribute("id", "corps")
         bodyElements[i].innerText =localStorage.getItem("username") + " a tweeté";
