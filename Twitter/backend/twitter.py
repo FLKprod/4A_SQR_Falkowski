@@ -91,23 +91,6 @@ def get_tweets_by_profil(profil):
     print(user_tweet)
     return user_tweet
 
-# route pour recuperer les tweets en fonction d'un sujet
-@app.route('/<sujet>', methods=['POST'])
-def get_tweets_by_theme(sujet):
-    user_tweet = []
-    for key in r.scan_iter("*"):
-        tweetSTR=r.get(key).decode('utf-8')
-        tweet=json.loads(tweetSTR)
-        if 'sujet' in tweetSTR and tweet['sujet']==sujet:
-            profil=tweet['profil']
-            print(profil)
-            user_tweet.append(tweet)
-        else:
-            print("pas un tweet maos osef")
-    print(user_tweet)
-    return user_tweet
-
-
 # route pour recuperer tous les tweets dans l'API
 @app.route('/all_tweets', methods=['POST'])
 def get_all_tweets():
