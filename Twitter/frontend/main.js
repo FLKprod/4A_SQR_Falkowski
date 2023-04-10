@@ -270,6 +270,7 @@ function retweet(event){
     var corps_retweet = tweet_retweet.querySelector("#corps").textContent;
     var sujet_retweet = tweet_retweet.querySelector("#sujet").textContent;
     var profil_retweet = tweet_retweet.querySelector("#auteur").textContent;
+    alert("retweet : " + corps_retweet + " / " + sujet_retweet + " / " + profil_retweet);
     var profil = localStorage.getItem("username");
     new_sujet = "#"+profil+" a retweet un tweet de "+profil_retweet+" : "+sujet_retweet;
     document.getElementById("corps").value = corps_retweet;
