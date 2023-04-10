@@ -19,7 +19,7 @@ xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
 xhr.onload = () => {
     if (xhr.status === 200) {
     var tweets = JSON.parse(xhr.response)
-    for(i=0;i<tweets.length;i++){
+    for(i=tweets.length-1;i>0;i--){
             var newtweet = document.createElement("div");
             newtweet.setAttribute("id", "tweet")
             newtweet.setAttribute("class", "tweet")
@@ -247,3 +247,9 @@ function gouser() {
 }
 
 // -------------------------------------------------------------------------------------------------
+
+
+// fonction retweeter ------------------------------------------------------------------------------
+function retweet(){
+
+}
