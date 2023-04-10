@@ -94,6 +94,13 @@ body{
     margin-right: 1em;
 }
 
+#sujet{
+    text-align: right;
+    width: 100%;
+    color: yellowgreen;
+    margin-right: 2rem;
+ }
+ 
 .buttons{
     display: flex;
     flex-direction: row;

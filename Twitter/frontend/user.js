@@ -1,12 +1,14 @@
-profil = localStorage.getItem("username");
+var profil = localStorage.getItem("username");
 document.getElementById("user-connected").innerText =profil;
-
-function tweets(){
 var xhr = new XMLHttpRequest();
-xhr.open("GET","http://127.0.0.1:5000/tweeter/"+ profil);
-  xhr.onload = () => {
-    if (xhr.status === 200) {
-      /*console.log("200 !!!")
+xhr.open("POST","http://127.0.0.1:5000/"+profil);
+xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+xhr.onload = () => {
+if (xhr.status === 200) {
+  var tweets = JSON.parse(xhr.response)
+  for(i=0;i<tweets.length;i++){
+    if(tweets[i].profil==localStorage.getItem("username")){
       var newtweet = document.createElement("div");
       newtweet.setAttribute("id", "tweet")
       document.getElementById("tweets").appendChild(newtweet)
@@ -22,26 +24,25 @@ xhr.open("GET","http://127.0.0.1:5000/tweeter/"+ profil);
 
       var newusername = document.createElement("p");
       newusername.setAttribute("id", "auteur")
-      newusername.innerText = "zzz";
+      newusername.innerText = tweets[i].profil;
       newuser.appendChild(newusername)
 
       var newtweettheme = document.createElement("p");
       newtweettheme.setAttribute("id", "sujet")
-      newtweettheme.innerText = "#"+"sujet";
+      newtweettheme.innerText = "#"+tweets[i].sujet;
       newuser.appendChild(newtweettheme)
 
       var newtweetcorps = document.createElement("p");
       newtweetcorps.setAttribute("id", "corps")
-      newtweetcorps.innerText = "deded";
-      newtweet.appendChild(newtweetcorps)*/
-      console.log(xhr.responseText)
+      newtweetcorps.innerText = tweets[i].corps;
+      newtweet.appendChild(newtweetcorps)
+    }
   }
-  else {
-    console.log(`Error: ${xhr.status}`);
-  }
-};
-xhr.send();
 }
+else {
+  console.log(`Error: ${xhr.status}`);
+}};
+xhr.send();
 
 const bodyElements = document.querySelectorAll('body *');
     for (let i = 0; i < bodyElements.length; i++) {

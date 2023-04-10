@@ -14,32 +14,8 @@
                 <textarea id="corps" class="textarea-interface" style="min-width: max-content;" placeholder="What's happening?" ></textarea>
                 <button id="tweeter" class="button-interface" style="margin-right: 1em;" onclick="tweeter();">Tweeter</button>
             </div>
-            <div id="tweets">
-                <div id="tweet">
-                    <div id="user">
-                        <img id="photo-auteur" src="user-photo.png">
-                        <p id="auteur">Falko</p>
-                        <p id="sujet">#whallahgénialleprojet</p>
-                    </div>
-                    
-                    <p id="corps">Mashalla le projet</p>
-                    <div class="buttons">
-                        <button id="like" onclick="">❤️</button>
-                        <button id="retweet" onclick="">🔁</button>
-                    </div>
-                </div>
-                <div id="tweet">
-                    <div id="user">
-                        <img id="photo-auteur" src="user-photo.png">
-                        <p id="auteur">Falko</p>
-                        <p id="sujet">#Asterix</p>
-                    </div>
-                    <p id="corps">Moi je ne crois pas qu’il y ait de bonne ou de mauvaise situation. Moi, si je devais résumer ma vie aujourd’hui avec vous, je dirais que c’est d’abord des rencontres. Des gens qui m’ont tendu la main, peut-être à un moment où je ne pouvais pas, où j’étais seul chez moi.</p>
-                    <div class="buttons">
-                        <button id="like" onclick="">❤️</button>
-                        <button id="retweet" onclick="">🔁</button>
-                    </div>
-                </div>
+            <div id="tweets" class="tweets">
+                <!-- emplacement des tweets-->
             </div>
         </div>
         <div class="interface-user">
@@ -51,10 +27,12 @@
                 <p id="user-connected" style="color:whitesmoke">user connecté</p>
                 <button id="connect" class="button-interface" onclick="gouser();">Voir mon profil</button>
                 <p style="margin-top: 5rem;">Choisir le theme</p>
-                <select id="sujet-selected">
+                <input id="select-theme" list="all-themes" class="textarea-interface" style="max-width: max-content;"placeholder="Theme" />
+                <datalist id="all-themes">
                     <option>Globale</option>
-                </select>
-                <input id="select-theme" class="textarea-interface" style="max-width: max-content;"placeholder="Theme" >
+                    <option>OM</option>
+                    <option>Economie</option>
+                </datalist>
                 <button id="connect" class="button-interface" onclick="changetheme();">Séléctionner le thème</button>
                 <p id="theme-selected" style="color:whitesmoke"></p>
                 
