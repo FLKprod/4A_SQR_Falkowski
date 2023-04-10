@@ -48,7 +48,7 @@ if (xhr.status === 200) {
       newtweet.appendChild(newtweetcorps)
     }
   }
-  // on ajoute les elements pour décrire les acctions
+  // on ajoute les elements pour décrire les actions
   let bodyElements = document.getElementsByClassName("tweet");
     for (let i = 0; i < bodyElements.length; i++) {
       if(bodyElements[i].id == 'action'){

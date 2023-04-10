@@ -65,7 +65,7 @@ xhr.onload = () => {
 
         var retweetbutton = document.createElement("button");
         retweetbutton.setAttribute("id", "retweet")
-        retweetbutton.setAttribute('onclick', 'retweet();');
+        retweetbutton.setAttribute('onclick', 'retweet(event);');
         retweetbutton.innerText = "🔁";
         buttons.appendChild(retweetbutton)
     }
@@ -175,7 +175,7 @@ function tweeter(){
                 var retweetbutton = document.createElement("button");
                 retweetbutton.setAttribute("id", "retweet")
                 likebutton.setAttribute("class", "retweet")
-                retweetbutton.setAttribute('onclick', 'retweet();');
+                retweetbutton.setAttribute('onclick', 'retweet(event);');
                 retweetbutton.innerText = "🔁";
                 buttons.appendChild(retweetbutton)
 
@@ -265,11 +265,19 @@ function gouser() {
 
 
 // fonction retweeter ------------------------------------------------------------------------------
-function retweet(){
-    alert('-><-')
-}
+function retweet(event){
+    var tweet_retweet = event.target.parentNode.parentNode;
+    var corps_retweet = tweet_retweet.querySelector("#corps").textContent;
+    var sujet_retweet = tweet_retweet.querySelector("#sujet").textContent;
+    var profil_retweet = tweet_retweet.querySelector("#auteur").textContent;
+    var profil = localStorage.getItem("username");
+    new_sujet = "#"+profil+" a retweet un tweet de "+profil_retweet+" : "+sujet_retweet;
+    document.getElementById("corps").value = corps_retweet;
+    localStorage.setItem("sujet",new_sujet);
+    tweeter();
+} 
 
-// fonctiion like ----------------------------------------------------------------------------------
+// fonction like ----------------------------------------------------------------------------------
 function like(event){
     var tweetlike = event.target.parentNode.parentNode;
     var corpsParagraphe = tweetlike.querySelector("#corps").textContent;

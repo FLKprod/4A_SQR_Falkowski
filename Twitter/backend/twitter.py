@@ -87,7 +87,7 @@ def get_tweets_by_profil(profil):
             print(tweet['profil'])
             user_tweet.append(tweet)
         else:
-            print("pas un tweet maos osef")
+            print("pas un tweet mais osef")
     print(user_tweet)
     return user_tweet
 
@@ -101,6 +101,6 @@ def get_all_tweets():
         if 'sujet' in tweetSTR:
             user_tweet.append(tweet)
         else:
-            print("pas un tweet maos osef")
+            print("pas un tweet mais osef")
     print(user_tweet)
     return user_tweet

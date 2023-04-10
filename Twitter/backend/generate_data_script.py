@@ -10,7 +10,9 @@ user_id = int(r.get("user_id"))
 for i in range(0+user_id, int(len(noms))+user_id, 1): #Ajoute 15 utilisateurs
     r.set(i+1, "{\"profil\": \"" + noms[i-user_id] + "\", \"id\": " + str(i+1) + "}")
 
+# Liste de timestamps pour les id de tweets
 timestamps = ["1680958751302", "1680958752302", "1680958753302", "1680958754302", "1680958755302", "1680958756302", "1680958757302", "1680958758302", "1680958759302", "1680958760302", "1680958761302", "1680958762302", "1680958763302", "1680958764302", "1680958765302", "1680958766302", "1680958767302", "1680958768302", "1680958769302", "1680958770302", "1680958771302", "1680958772302", "1680958773302", "1680958774302", "1680958775302", "1680958776302", "1680958777302", "1680958778302", "1680958779302", "1680958780302", "1680958781302", "1680958782302", "1680958783302", "1680958784302", "1680958785302", "1680958786302", "1680958787302", "1680958788302", "1680958789302", "1680958790302", "1680958791302", "1680958792302", "1680958793302", "1680958794302", "1680958795302"]
+# Liste de phrases pour les tweets
 tweets = [
     "La nature est magnifique en cette saison.",
     "Je viens juste de finir un livre incroyable.",
@@ -58,6 +60,7 @@ tweets = [
     "Je suis émerveillé par la façon dont les plantes et les animaux sont interconnectés dans notre écosystème.",
     "Je suis heureux de voir les gens prendre soin de l'environnement et de la planète."]
 
+# Liste de sujets pour les hashtags des tweets
 subjects = [
 "Nature",
 "Lecture",
@@ -111,4 +114,5 @@ for i in range(0, 3*int(len(noms)), 3): #Ajoute 45 tweets (3 par utilisateurs)
     r.set(timestamps[i+1], "{\"profil\": \"" + noms[i//3] + "\", \"corps\": \"" + tweets[i+1] + "\", \"sujet\": \"" + subjects[i+1] + "\", \"id\": " + str(timestamps[i+1]) + "}")
     r.set(timestamps[i+2], "{\"profil\": \"" + noms[i//3] + "\", \"corps\": \"" + tweets[i+2] + "\", \"sujet\": \"" + subjects[i+2] + "\", \"id\": " + str(timestamps[i+2]) + "}")
 
+# Met à jour le compteur du nombre d'utilisateurs
 r.set("user_id", int(len(noms))+user_id)
