@@ -183,8 +183,8 @@ function changeuser(){
         localStorage.setItem("username",document.getElementById("connect-user").value)
         document.getElementById("user-connected").innerText = localStorage.getItem("username") + " est actuellement connecté";
         var xhr = new XMLHttpRequest();
-        var id = Date.now();
-        var profil = localStorage.getItem("username")
+        var id = 0;
+        var profil = localStorage.getItem("username");
         xhr.open("POST","http://127.0.0.1:5000/user/"+profil+"/"+id);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("Access-Control-Allow-Origin","*");

@@ -62,12 +62,12 @@ def changeuser(profil,id):
         print(prof)
         if profil == prof:
             user_unique = i+1
-        if user_unique == -1:
-            id = int(user_id) + 1
-            r.set("user_id", id)
-            r.set(id, json.dumps(User(profil,id).__json__()))
-        else:
-            id = user_unique
+    if user_unique == -1:
+        id = int(user_id) + 1
+        r.set("user_id", id)
+        r.set(id, json.dumps(User(profil,id).__json__()))
+    else:
+        id = user_unique
     print(r.get(id))
     sys.stdout.flush()
     return User(profil,id).__json__()
